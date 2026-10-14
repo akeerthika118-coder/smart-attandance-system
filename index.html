@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Attendance System</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f4ff;
+      color: #222;
+    }
+
+    header {
+      background: #263c8c;
+      color: white;
+      padding: 24px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+    }
+
+    nav {
+      background: #172554;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px #0001;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    input {
+      border: 1px solid #bbb;
+    }
+
+    button {
+      background: #263c8c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #172554;
+    }
+
+    #result {
+      margin-top: 15px;
+      overflow-wrap: anywhere;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Smart Attendance System</h1>
+    <p>Simple • Smart • Digital</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#attendance">Attendance</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <main>
+    <section class="card" id="home">
+      <h2>Welcome!</h2>
+      <p>Manage your attendance easily with our smart attendance website.</p>
+    </section>
+
+    <section class="card" id="attendance">
+      <h2>Student Attendance</h2>
+
+      <form id="attendanceForm">
+        <label for="studentName">Student Name</label>
+        <input id="studentName" type="text"
+               placeholder="Enter your name" required>
+
+        <label for="studentId">Student ID</label>
+        <input id="studentId" type="text"
+               placeholder="Enter your student ID" required>
+
+        <button type="submit">Check In</button>
+      </form>
+
+      <div id="result" role="status"></div>
+    </section>
+
+    <section class="card" id="about">
+      <h2>About This Project</h2>
+      <p>This project aims to make attendance management easier
+         using digital technology.</p>
+      <p>Future features: QR scanning, GPS verification,
+         teacher dashboard and attendance reports.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Smart Attendance System | Student Project</p>
+  </footer>
+
+  <script>
+    document.getElementById("attendanceForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("studentName")
+          .value.trim();
+        const id = document.getElementById("studentId")
+          .value.trim();
+
+        document.getElementById("result").textContent =
+          "Welcome, " + name + "! Your demo check-in was received. " +
+          "Student ID: " + id +
+          ". This is only a demo; attendance has not been saved.";
+      });
+  </script>
+</body>
+</html>
